@@ -1,0 +1,12 @@
+ul.list--apartment
+  - for (var i = 0, length = apartmentList.length; i < length; i += 1)
+    - var completeDescription = apartmentList[i].completeDescription()
+    - var liveArea = completeDescription.liveSquare
+    - var kitchenArea = completeDescription.kitchenSquare
+    - var cardPhoto = apartmentList[i].photo
+      li.list--apartment--item
+        img.item--photo(src='#{cardPhoto}')
+        span.item--area Площадь: #{liveArea + kitchenArea}м
+          sup 2
+        span.item--rooms Количество Комнат: #{completeDescription.roomNumber}
+        button.btn Подробнее
